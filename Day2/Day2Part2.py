@@ -5,11 +5,13 @@ for line in f:
     line = line.strip()
     long = len(line) - 1
     if "down" in line:
-        y += int(line[long])
+        aim += int(line[long])
     elif "up" in line:
-        y -= int(line[long])
+        aim -= int(line[long])
     else:
         x += int(line[long])
+        y += aim * int(line[long])
+    print(x,y)
     print(x*y)
 f.close()
 
